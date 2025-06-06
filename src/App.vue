@@ -83,7 +83,7 @@ export default {
   methods: {
     fetchTasks() {
       const stored = localStorage.getItem('tasks')
-      if (stored) {
+      if (stored && JSON.parse(stored).length > 0) {
         this.tasks = JSON.parse(stored)
       } else {
         fetch('https://jsonplaceholder.typicode.com/todos')
